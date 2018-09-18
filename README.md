@@ -1,0 +1,2 @@
+# Chocolate
+A JavaScript library

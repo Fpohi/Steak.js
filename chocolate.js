@@ -6,3 +6,6 @@ function GeoOk () {
         UseOk = false
     }
 }
+function getId (id) {
+document.getElementById(id)
+}

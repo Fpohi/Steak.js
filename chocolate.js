@@ -9,3 +9,9 @@ function GeoOk () {
 function getId (id) {
 document.getElementById(id)
 }
+function ajaxStart (type, load, async) {
+    var ajax = new XMLHttpRequest()
+    ajax.onload = reqListener
+ajax.open(type, load, async)
+ajax.send()
+}

@@ -1,20 +1,24 @@
 function GeoOk () {
-    var UseOk = NaN
-    if (navigator.geolocation) {
-        UseOk = true
+    "use strict";
+    var UseOk = NaN;
+    if (window.navigator.geolocation) {
+        UseOk = true;
     } else {
-        UseOk = false
+        UseOk = false;
     }
 }
 function getId (id) {
-document.getElementById(id)
+    "use strict";
+document.getElementById(id);
 }
 function ajaxStart (type, load, async) {
-    var ajax = new XMLHttpRequest()
-    ajax.onload = reqListener
-ajax.open(type, load, async)
-ajax.send()
+    "use strict";
+    var ajax = new XMLHttpRequest();
+    ajax.onload = reqListener;
+ajax.open(type, load, async);
+ajax.send();
 }
-function getClass (class) {
-    document.getElementsByClassName(class)
+function getClass (className) {
+    "use strict";
+    document.getElementsByClassName(className);
 }

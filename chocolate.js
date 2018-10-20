@@ -22,3 +22,12 @@ function getClass (className) {
     "use strict";
     document.getElementsByClassName(className);
 }
+function hideElement (element) {
+    "use strict";
+   var setting = document.getElementById(element);
+   if (setting.style.display === "none") {
+       setting.style.display = "block";
+   } else {
+       setting.style.display = "none";
+   }
+}

@@ -15,3 +15,6 @@ function ajaxStart (type, load, async) {
 ajax.open(type, load, async)
 ajax.send()
 }
+function getClass (class) {
+    document.getElementsByClassName(class)
+}

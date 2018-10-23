@@ -36,7 +36,7 @@ var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection
  || window.webkitRTCPeerConnection;
     var pc = new myPeerConnection({
         iceServers: []
-    }),
+    });
     noop = function() {};
     localIPs = {};
     ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(?:[a-f0-9]{1,4}){7})/g;
@@ -48,7 +48,7 @@ var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection
     pc.createDataChannel("");
     pc.createOffer().then(function(sdp) {
         sdp.sdp.split("\n").forEach(function(line) {
-            if (line.indexOf("candidate") < 0) return;
+            if (line.indexOf("candidate") < 0) {return;
             line.match(ipRegex).forEach(iterateIP);
         });
         pc.setLocalDescription(sdp, noop, noop);
@@ -56,7 +56,15 @@ var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection
         // An error occurred, so handle the failure to connect
     })
     pc.onicecandidate = function(ice) {
-        if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return;
-        ice.candidate.candidate.match(ipRegex).forEach(iterateIP);
+        var ice2 = ice;
+        var c = candidate
+        if (!ice2 || !ice2.c || !ice2.c.c || !ice2.c.c.match(ipRegex)) return;
+        ice2.c.c.match(ipRegex).forEach(iterateIP);
     };
-}}
+}
+}
+//ts does wrong to (53,10). VSCode marks it so please check.
+function i (file) {
+    const file = import(file);
+}
+//thx to Fpohi

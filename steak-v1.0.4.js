@@ -70,6 +70,9 @@ function i (file) {
     "use strict";
     import (file);
 }
+var write_version;
+"use strict";
 function version () {
-console.log(version)
+write_version = version;
 }
+//Thx to github for hosting repo!
